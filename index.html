@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <title>Nelik Studio</title>
+</head>
+<body>
+  <header style="position: relative;">
+
+    <div class="navbar card left-align heeder-large-screen">
+
+      <div id="animatednav" class="navbar-item navbutton hide-medium hide-large w3-right hover container" onclick="animatednav(getElementById('animatednav'));navbar()" title="Toggle Navigation Menu">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      
+      <button onclick="include( $( this ) )" value="" class="navbar-item navbutton hover navtitle">Nelik Studio</button>
+      <div>
+        <button id="test" onclick="include( $( this ) )" value="1" class="navbar-item navbutton hide-small hover" >About</button>
+        <button onclick="include( $( this ) )" value="2" class="navbar-item navbutton hide-small hover"> Games</button>
+        <button onclick="include( $( this ) )" value="3" class="navbar-item navbutton hide-small hover">Shop</button>
+        <button onclick="include( $( this ) )" value="4" class="navbar-item navbutton hide-small hover">Events</button>
+        <button onclick="include( $( this ) )" value="5" class="navbar-item navbutton hide-small hover">Contact</button>
+      </div>
+      
+      <div id="navmobile" class="navbar-block hide hide-large hide-medium dropdown">
+        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="1">About</a>
+        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="2">Games</a>
+        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="3">Shop</a>
+        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="4">Events</a>
+        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="5">Contact</a>
+      </div>
+  </header>
+
+    <div class="included_page" id="included_page"></div>
+
+	<div class="footer">
+		<p>© 2023 NelikStudio.me, All Rights Reserved</p>
+	</div>
+<script>
+
+function navbar() {
+  var x = document.getElementById("navmobile");
+  if (x.className.indexOf("slidenavbarshow") == -1) {
+    x.className += " slidenavbarshow";
+  } else { 
+    x.className = x.className.replace(" slidenavbarshow", "");
+  }
+}
+
+function animatednav(x) {
+  x.classList.toggle("change");
+}
+
+function include(elem)
+{
+  var page = elem.val();
+  $.ajax({
+    url: "link" + page + ".html",
+    type: "GET"
+  }).done(function(msg) {
+    $('#included_page').html(msg);
+    })
+}
+
+</script>
+</body>
+</html>
