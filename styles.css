@@ -14,7 +14,7 @@ body {
     background-color: #000015;
     position: fixed;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 #navmobile button{
@@ -37,6 +37,10 @@ html {
 
 *, *:before, *:after {
     box-sizing: inherit;
+}
+
+.activebar {
+    color:red
 }
 
 html, body, button {
@@ -82,12 +86,16 @@ html, body, button {
 }
 
 .navbar .navbar-item {
-    padding: 12px 16px;
+    padding: 22px 18px;
     float: left;
     width: auto;
     border: none;
     display: block;
     outline: 0;
+}
+
+.navbaricon {
+    padding: 14px 18px!important;
 }
 
 .navbar-block .navbar-item{
@@ -135,22 +143,8 @@ html, body, button {
     color:#000
 }
 
-.navbutton:hover{
-    color:#000!important;
-    background-color:#ccc!important;
-}
-
-.navtitle:hover {
-    transform: scale(1.1);
-}
-
 .w3-right{
     float:left!important
-}
-
-.hover:hover{
-    color:#fff!important;
-    background-color:#000015!important
 }
 
 .navbar-block, .navbar-block {
@@ -191,24 +185,29 @@ html, body, button {
     display:block!important;
 }
 
-.container {
-    display: inline-block;
-    cursor: pointer;
+.navbaricons {
+    width: 25px;
+    text-align: center;
+    font-size: 25px;
+    padding-right: 6px;
 }
-
 
 /* MEDIA */
 
 @media (min-width:481px) and (max-width:600px){
     button {
-        font-size: 14px;
-        padding: 10px 14px!important;
+        font-size: 12px;
+        padding: 18px 14px!important;
     }
 }	
 
 @media (min-width:481px){
     .navbutton:hover{
        transform: scale(1.1);
+    }
+    .hover:hover{
+        color:#fff!important;
+        background-color:#000015!important
     }
 }
 
@@ -224,7 +223,7 @@ html, body, button {
     }
 }
 
-@media (min-width:601px){
+@media (min-width:640px){
     button {
         font-size: 18px;
     }
@@ -248,8 +247,9 @@ html, body, button {
     }
     button {
         font-size: 20px!important;
-        padding: 14px 16px!important;
+        padding: 16px 0px!important;
     }
+
 }
 
 /* NAVBAR ICON */
