@@ -39,10 +39,6 @@ html {
     box-sizing: inherit;
 }
 
-.activebar {
-    color:red
-}
-
 html, body, button {
     font-family: Verdana,sans-serif;
     font-size: 15px;
@@ -86,7 +82,7 @@ html, body, button {
 }
 
 .navbar .navbar-item {
-    padding: 22px 18px;
+    padding: 12px 16px;
     float: left;
     width: auto;
     border: none;
@@ -197,7 +193,7 @@ html, body, button {
 @media (min-width:481px) and (max-width:600px){
     button {
         font-size: 12px;
-        padding: 18px 14px!important;
+        padding: 12px 16px!important;
     }
 }	
 
@@ -287,6 +283,7 @@ html, body, button {
     margin-top: 40vh;
     background-color: black;
     color: white;
+    font-size: 40px;
 }
 
 .bodytest {
