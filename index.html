@@ -8,96 +8,62 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <title>Nelik Studio</title>
 </head>
-<body>
+<body onload="include({ val: '1' })">
   <header style="position: relative;">
 
-    <div class="navbar card left-align heeder-large-screen">
+    <div class="navbar headerlarge">
 
-      <div id="animatednav" class="navbar-item navbutton hide-medium hide-large w3-right hover navbaricon" onclick="animatednav(getElementById('animatednav'));navbar()" title="Toggle Navigation Menu">
+      <div id="animatednav" class="navbaritem navbutton hidemedium hidelarge hover mobilenavicon" onclick="animatednav(getElementById('animatednav'));navbar()" title="Toggle Navigation Menu">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
       
-      <button onclick="window.location.href='index.html/../..';" class="navbar-item navbutton hover navtitle">Nelik Studio</button>
+      <button onclick="window.location.href='index.html/../..';" class="navbaritem navbutton hover">Nelik Studio</button>
       <div>
-        <button onclick="include( $( this ) )" value="1" class="navbar-item navbutton hide-small hover">Home</button>
-        <button onclick="include( $( this ) )" value="2" class="navbar-item navbutton hide-small hover">About</button>
-        <button onclick="include( $( this ) )" value="3" class="navbar-item navbutton hide-small hover">Portfolio</button>
-        <button onclick="include( $( this ) )" value="4" class="navbar-item navbutton hide-small hover">Socials</button>
-        <button onclick="include( $( this ) )" value="5" class="navbar-item navbutton hide-small hover">Contact</button>
+        <button onclick="include({ val: '1' })" class="navbaritem navbutton hidesmall hover">Home</button>
+        <button onclick="include({ val: '2' })" class="navbaritem navbutton hidesmall hover">About</button>
+        <button onclick="include({ val: '3' })" class="navbaritem navbutton hidesmall hover">Portfolio</button>
+        <button onclick="include({ val: '4' })" class="navbaritem navbutton hidesmall hover">Socials</button>
+        <button onclick="include({ val: '5' })" class="navbaritem navbutton hidesmall hover">Contact</button>
       </div>
       
-      <div id="navmobile" class="navbar-block hide hide-large hide-medium dropdown">
+      <div id="navmobile" class="navbarblock hide hidelarge hidemedium dropdown">
         
-        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="1">
+        <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '1' })">
           <i class="fa fa-home navbaricons"></i>
           <a>Home</a>
         </button>
 
-        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="2">
+        <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '2' })">
           <i class="fa fa-user navbaricons"></i>
           <a>About</a>
         </button>
 
-        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="3">
+        <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '3' })">
           <i class="fa fa-th-large navbaricons"></i>
           <a>Portfolio</a>
         </button>
 
-        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="4">
+        <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '4' })">
           <i class="fa fa-mobile navbaricons" style="font-size: 35px;"></i>
           <a>Socials</a>
         </button>
 
-        <button class="navbar-item navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include( $( this ) )" value="5">
+        <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '5' })">
           <i class="fa fa-envelope navbaricons"></i>
           <a>Contact</a>
         </button>
 
       </div>
   </header>
-
     <div class="included_page" id="included_page"></div>
 
 	<div class="footer">
 		<p>© 2023 NelikStudio.me, All Rights Reserved</p>
 	</div>
-<script>
-
-function navbar() {
-  var x = document.getElementById("navmobile");
-  if (x.className.indexOf("slidenavbarshow") == -1) {
-    x.className += " slidenavbarshow";
-  } else { 
-    x.className = x.className.replace(" slidenavbarshow", "");
-  }
-}
-
-function animatednav(x) {
-  x.classList.toggle("change");
-}
-
-function include(elem)
-{
-  var page = elem.val();
-  $.ajax({
-    url: "link" + page + ".html",
-    type: "GET"
-  }).done(function(msg) {
-    $('#included_page').html(msg);
-    })
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
-  if(disclaimer) {
-    disclaimer.remove();
-  }
-});
-
-</script>
 </body>
 </html>
