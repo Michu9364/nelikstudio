@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-/* NAVBAR */
+/* Nawigacja */
 
 .headerlarge{
     display: flex;
@@ -132,7 +132,7 @@ body {
     padding-right: 6px;
 }
 
-/* NAVBAR MOBILE ICON */
+/* Ikona menu na małych ekranach */
 
 .bar1, .bar2, .bar3 {
     width: 25px;
@@ -156,7 +156,7 @@ body {
     background-color: white;
 }
 
-/* CONTENT */
+/* Content */
 
 .included_page {
     display: flex;
@@ -170,43 +170,12 @@ body {
     font-size: 40px;
 }
 
-.bodytest {
-    background-color: red;
+.contentbody {
     width: 100%;
     height: 90vh;
 }
 
-.bodytest1 {
-    background-color: blue;
-    width: 100%;
-    height: 90vh;
-}
-
-.bodytest2 {
-    background-color: aqua;
-    width: 100%;
-    height: 90vh;
-}
-
-.bodytest3 {
-    background-color: antiquewhite;
-    width: 100%;
-    height: 90vh;
-}
-
-.bodytest4 {
-    background-color: chocolate;
-    width: 100%;
-    height: 90vh;
-}
-
-.bodytest5 {
-    background-color: chartreuse;
-    width: 100%;
-    height: 90vh;
-}
-
-/* FOOTER */
+/* Stopka */
 
 .footer {
     display: inline-block;
@@ -222,7 +191,7 @@ body {
     text-align: center;
 }
 
-/* MEDIA */
+/* Responsywność */
 
 @media (min-width:481px) and (max-width:600px){
     button {
