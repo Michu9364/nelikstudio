@@ -21,7 +21,7 @@ function animatednav(x) {
 function include(elem) {
     var page = elem.val;
     $.ajax({
-      url: "link" + page + ".html",
+      url: "fragments/link" + page + ".html",
       type: "GET"
     }).done(function(msg) {
       $('#included_page').html(msg);
