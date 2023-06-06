@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="media/logo.png">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/dark-mode.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <title>Nelik Studio</title>
 </head>
 <body onload="include({ val: '1' })">
   <header style="position: relative;">
-
     <div class="navbar headerlarge">
 
       <!-- Ikona menu na małych ekranach -->
@@ -27,16 +28,17 @@
       <!-- Nawigacja na dużych ekranach -->
 
       <button onclick="window.location.href='index.html/../..';" class="navbaritem navbutton hover">Nelik Studio</button>
-      <div>
+      <div id="navbig">
         <button onclick="include({ val: '1' })" class="navbaritem navbutton hidesmall hover">Home</button>
         <button onclick="include({ val: '2' })" class="navbaritem navbutton hidesmall hover">About</button>
         <button onclick="include({ val: '3' })" class="navbaritem navbutton hidesmall hover">Portfolio</button>
         <button onclick="include({ val: '4' })" class="navbaritem navbutton hidesmall hover">Socials</button>
         <button onclick="include({ val: '5' })" class="navbaritem navbutton hidesmall hover">Contact</button>
+        <input onclick="toggleDarkMode()" type="checkbox" id="switch" class="navbaritem togglebutton "/><label for="switch" >Toggle</label>
       </div>
       
       <div id="navmobile" class="navbarblock hide hidelarge hidemedium dropdown">
-        
+
         <!-- Nawigacja na telefonach -->
 
         <button class="navbaritem navbutton" onclick="animatednav(getElementById('animatednav'));navbar();include({ val: '1' })">
@@ -64,17 +66,32 @@
           <a>Contact</a>
         </button>
 
+        <input onclick="toggleDarkMode()" type="checkbox" id="switch" class="navbaritem togglebutton"/><label for="switch" >Toggle</label>
+
       </div>
   </header>
 
     <!-- Ładowanie stron z plików (link.html) -->
 
     <div class="included_page" id="included_page"></div>
-
     <!-- Stopka -->
 
 	<div class="footer">
 		<p>© 2023 NelikStudio.me, All Rights Reserved</p>
 	</div>
+
+  <script>
+
+    // Pobranie informacji o ciemnym motywie z pliku cookie i ustawienie odpowiedniego stylu
+
+    var darkModeCookie = Cookies.get('darkMode');
+    if (darkModeCookie === 'true') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+
+</script>
+
 </body>
 </html>
