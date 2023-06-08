@@ -4,11 +4,15 @@
 function navbar() {
   var navbar = document.getElementById("navmobile");
   if (navbar.classList.contains("slidenavbarshow")) {
-      navbar.classList.remove("slidenavbarshow");
-      navbar.classList.add("slidenavbarhide");
-  } else {
+    navbar.classList.remove("slidenavbarshow");
+    navbar.classList.add("slidenavbarhide");
+    setTimeout(function() {
       navbar.classList.remove("slidenavbarhide");
-      navbar.classList.add("slidenavbarshow");
+    }, 500);
+
+  } else {
+    navbar.classList.remove("slidenavbarhide");
+    navbar.classList.add("slidenavbarshow");
   }
 }
 
