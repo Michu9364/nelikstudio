@@ -1,19 +1,28 @@
 
 /* Rozwijanie menu na mobile*/
 
+
 function navbar() {
-  var x = document.getElementById("navmobile");
-  if (x.className.indexOf("slidenavbarshow") == -1) {
-    x.className += " slidenavbarshow";
-  } else { 
-    x.className = x.className.replace(" slidenavbarshow", "");
+  var navbar = document.getElementById("navmobile");
+  if (navbar.classList.contains("slidenavbarshow")) {
+      navbar.classList.remove("slidenavbarshow");
+      navbar.classList.add("slidenavbarhide");
+  } else {
+      navbar.classList.remove("slidenavbarhide");
+      navbar.classList.add("slidenavbarshow");
   }
 }
 
 /* Animacja guzika menu na mobile*/
 
-function animatednav(x) {
+function animatednav() {
+  var x = document.getElementById("animatednav");
   x.classList.toggle("change");
+}
+
+function darkmodenav() {
+  var x = document.getElementById("animatednav");
+  x.classList.toggle("darkmodenav");
 }
 
 /* Ładowanie stron*/
@@ -32,21 +41,39 @@ function include(elem) {
 
 function enableDarkMode() {
   var element = document.body;
-  element.classList.add("dark-mode");
+  element.classList.add('dark-mode');
+  checkbox.checked = true;
   Cookies.set('darkMode', 'true');
 }
 
 function disableDarkMode() {
   var element = document.body;
-  element.classList.remove("dark-mode");
+  element.classList.remove('dark-mode');
+  checkbox.checked = false;
   Cookies.set('darkMode', 'false');
 }
 
 function toggleDarkMode() {
   var element = document.body;
-  element.classList.toggle("dark-mode");
-  var isDarkModeEnabled = element.classList.contains("dark-mode");
+  element.classList.toggle('dark-mode');
+  var isDarkModeEnabled = element.classList.contains('dark-mode');
   Cookies.set('darkMode', isDarkModeEnabled.toString());
+}
+
+/* Synchoronizacja guzików od zmiany motywu */
+
+function syncCheckboxes1() {
+  var checkbox1 = document.getElementById("switch");
+  var checkbox2 = document.getElementById("switch2");
+
+  checkbox2.checked = checkbox1.checked;
+}
+
+function syncCheckboxes2() {
+  var checkbox1 = document.getElementById("switch");
+  var checkbox2 = document.getElementById("switch2");
+
+  checkbox1.checked = checkbox2.checked;
 }
 
 /* Usunięcie watermarka na stronie - domena*/

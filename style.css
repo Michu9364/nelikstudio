@@ -15,7 +15,7 @@ body {
     padding: 0;
 }
 
-body, .footer {
+body, .footer, .slidenavbarshow{
     transition: 1.2s;
 }
 
@@ -38,6 +38,38 @@ body, .footer {
     background-color: #0e0a18;
 }
 
+.darkmodenav.change .bar1, .darkmodenav.change .bar3 {
+    background: white!important;
+}
+
+.darkmodenav .bar1, .darkmodenav .bar2, .darkmodenav .bar3{
+    background-color: orange!important;
+}
+
+/* Ikona menu na małych ekranach */
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    transform: translate(0, 10px) rotate(-45deg);
+    background-color: orange;
+}
+  
+.change .bar2 {
+    opacity: 0;
+}
+  
+.change .bar3 {
+    transform: translate(0, -10px) rotate(45deg);
+    background-color: orange;
+}
+
 /* Guzik zmiany motywu */
 
 input[type=checkbox]{
@@ -51,7 +83,7 @@ label {
     text-indent: -9999px;
     width: 50px;
     height: 25px;
-    background: orange;
+    background: #0e0a18;
     display: flex;
     border-radius: 100px;
     position: relative;
@@ -65,19 +97,19 @@ label:after {
     left: 5px;
     width: 15px;
     height: 15px;
-    background: #0e0a18;
+    background: #f0f0fa;
     border-radius: 90px;
     transition: 0.3s;
 }
   
 input:checked + label {
-    background: #0e0a18;
+    background: orange;
 }
   
 input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
-    background: #f0f0fa;
+    background: black;
 }
   
 label:active:after {
@@ -96,7 +128,7 @@ label:active:after {
     position: fixed;
     overflow: hidden;
     margin-top: 60px;
-    transition: 1.2s;
+    height: 380px;
 }
 
 #navmobile button{
@@ -189,8 +221,36 @@ label:active:after {
     display:none!important
 }
 
-.slidenavbarshow{
-    display:block!important;
+/* Animacja pojawiania się navbaru */
+
+.slidenavbarshow {
+    animation: slideIn 0.5s ease-in;
+    animation-fill-mode: forwards;
+    display: block!important;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slidenavbarhide {
+    animation: slideOut 0.5s ease-out;
+    animation-fill-mode: forwards;
+    display: block!important;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-110%);
+    }
 }
 
 .navbaricons {
@@ -200,29 +260,6 @@ label:active:after {
     padding-right: 6px;
 }
 
-/* Ikona menu na małych ekranach */
-
-.bar1, .bar2, .bar3 {
-    width: 25px;
-    height: 4px;
-    background-color: black;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-  
-.change .bar1 {
-    transform: translate(0, 10px) rotate(-45deg);
-    background-color: orange;
-}
-  
-.change .bar2 {
-    opacity: 0;
-}
-  
-.change .bar3 {
-    transform: translate(0, -10px) rotate(45deg);
-    background-color: orange;
-}
 
 /* Content */
 
