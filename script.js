@@ -1,6 +1,5 @@
 
-/* Rozwijanie menu na mobile*/
-
+/* Rozwijanie menu na mobile */
 
 function navbar() {
   var navbar = document.getElementById("navmobile");
@@ -13,7 +12,7 @@ function navbar() {
   }
 }
 
-/* Animacja guzika menu na mobile*/
+/* Animacja guzika menu na mobile */
 
 function animatednav() {
   var x = document.getElementById("animatednav");
@@ -25,16 +24,19 @@ function darkmodenav() {
   x.classList.toggle("darkmodenav");
 }
 
-/* Ładowanie stron*/
+/* Ładowanie stron */
 
 function include(elem) {
   var page = elem.val;
+  var includedPage = $('#included_page');
+  includedPage.removeClass('fade-in');
   $.ajax({
-    url: "fragments/link" + page + ".html",
-    type: "GET"
+      url: "fragments/link" + page + ".html",
+      type: "GET"
   }).done(function(msg) {
-    $('#included_page').html(msg);
-  })
+      includedPage.html(msg);
+      includedPage.addClass('fade-in');
+  });
 }
 
 /* Ciemny motyw */
@@ -76,7 +78,7 @@ function syncCheckboxes2() {
   checkbox1.checked = checkbox2.checked;
 }
 
-/* Usunięcie watermarka na stronie - domena*/
+/* Usunięcie watermarka na stronie - domena */
 
 document.addEventListener('DOMContentLoaded', () => {
   var disclaimer = document.querySelector("img[alt='www.000webhost.com']");

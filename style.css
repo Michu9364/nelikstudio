@@ -267,6 +267,19 @@ label:active:after {
     display: flex;
 }
 
+.fade-in {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .bodytext {
     text-align: center;
     margin-top: 40vh;
@@ -362,5 +375,7 @@ label:active:after {
         font-size: 20px!important;
         padding: 16px 0px!important;
     }
-
+    .fade-in {
+        animation: fadeIn 0.5s;
+    }
 }
