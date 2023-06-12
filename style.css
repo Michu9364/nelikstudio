@@ -9,8 +9,8 @@ html {
 }
 
 body {
-    background-color: #f0f0fa;
-    color: #0e0a18;
+    background-color: #e6eae6;
+    color: #090b09;
     margin: 0;
     padding: 0;
 }
@@ -38,12 +38,20 @@ body, .footer, .slidenavbarshow{
     background-color: #0e0a18;
 }
 
+.dark-mode .navbar{
+    box-shadow: none;
+} 
+
 .darkmodenav.change .bar1, .darkmodenav.change .bar3 {
     background: white!important;
 }
 
 .darkmodenav .bar1, .darkmodenav .bar2, .darkmodenav .bar3{
     background-color: orange!important;
+}
+
+body.dark-mode .bodytext {
+    color: orange!important;
 }
 
 /* Ikona menu na małych ekranach */
@@ -97,7 +105,7 @@ label:after {
     left: 5px;
     width: 15px;
     height: 15px;
-    background: #f0f0fa;
+    background: #e6eae6;
     border-radius: 90px;
     transition: 0.3s;
 }
@@ -105,7 +113,7 @@ label:after {
 input:checked + label {
     background: orange;
 }
-  
+    
 input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
@@ -124,11 +132,12 @@ label:active:after {
 }
 
 #navmobile{
-    background-color: #f0f0fa;
+    background-color: #e6eae6;
     position: fixed;
     overflow: hidden;
     margin-top: 60px;
     height: 380px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 #navmobile button{
@@ -224,32 +233,36 @@ label:active:after {
 /* Animacja pojawiania się navbaru */
 
 .slidenavbarshow {
-    animation: slideIn 0.5s ease-in;
+    animation: slideIn 0.4s ease-in;
     animation-fill-mode: forwards;
     display: block!important;
 }
 
 @keyframes slideIn {
     0% {
-        transform: translateY(-100%);
+        transform: translateX(-100%);
+        opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 .slidenavbarhide {
-    animation: slideOut 0.5s ease-out;
+    animation: slideOut 0.4s ease-out;
     animation-fill-mode: forwards;
     display: block!important;
 }
 
 @keyframes slideOut {
     0% {
-        transform: translateY(0);
+        transform: translateX(0);
+        opacity: 1;
     }
     100% {
-        transform: translateY(-110%);
+        transform: translateX(-100%);
+        opacity: 0;
     }
 }
 
@@ -283,9 +296,9 @@ label:active:after {
 .bodytext {
     text-align: center;
     margin-top: 40vh;
-    background-color: #0e0a18;
-    color: white;
+    color: #0e0a18;
     font-size: 40px;
+    transition: 0.3s;
 }
 
 .contentbody {
@@ -300,7 +313,7 @@ label:active:after {
     position: fixed;
     width: 100%;             
     bottom: 0;
-    background-color:white;
+    background-color:#e6eae6;
 }
 
 .footer p {
