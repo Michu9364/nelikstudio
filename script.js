@@ -21,6 +21,8 @@ function navbar() {
 function animatednav() {
   var x = document.getElementById("animatednav");
   x.classList.toggle("change");
+  var g = document.getElementById("mainnavbar");
+  g.classList.toggle("shadow");
 }
 
 function darkmodenav() {
