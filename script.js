@@ -30,6 +30,23 @@ function darkmodenav() {
   x.classList.toggle("darkmodenav");
 }
 
+/* Guzik teleportacji na górę strony */
+
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("back-to-top").classList.add("show");
+    } else {
+        document.getElementById("back-to-top").classList.remove("show");
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 /* Ładowanie stron */
 
 function include(elem) {
