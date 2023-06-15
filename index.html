@@ -35,6 +35,7 @@
         <button onclick="include({ val: '4' })" class="navbaritem navbutton hidesmall hover">Socials</button>
         <button onclick="include({ val: '5' })" class="navbaritem navbutton hidesmall hover">Contact</button>
         <input onclick="toggleDarkMode();darkmodenav();syncCheckboxes1()" type="checkbox" id="switch" class="navbaritem togglebutton "/><label for="switch" >Toggle</label>
+        
       </div>
       
       <div id="navmobile" class="navbarblock hide hidelarge hidemedium dropdown">
@@ -85,20 +86,20 @@
 
     /* Pobranie informacji o ciemnym motywie z pliku cookie i ustawienie odpowiedniego stylu */
 
-var checkbox = document.getElementById('switch');
-var checkbox2 = document.getElementById('switch2');
-var darkModeCookie = Cookies.get('darkMode');
-    
-  if (darkModeCookie === 'true') {
-    enableDarkMode();
-    darkmodenav();
-    checkbox.checked = true;
-    checkbox2.checked = true;
-  } else {
-    disableDarkMode();
-  }
+    var checkbox = document.getElementById('switch');
+    var checkbox2 = document.getElementById('switch2');
+    var darkModeCookie = Cookies.get('darkMode');
+        
+      if (darkModeCookie === 'true') {
+        enableDarkMode();
+        darkmodenav();
+        checkbox.checked = true;
+        checkbox2.checked = true;
+      } else {
+        disableDarkMode();
+      }
 
-</script>
+  </script>
 
 </body>
 </html>
