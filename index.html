@@ -90,7 +90,7 @@
 
     var checkbox = document.getElementById('switch');
     var checkbox2 = document.getElementById('switch2');
-    var darkModeCookie = Cookies.get('darkMode');
+    var darkModeCookie = Cookies.get('darkMode', { expires: 7 });
         
       if (darkModeCookie === 'true') {
         enableDarkMode();
