@@ -360,14 +360,14 @@ label:active:after {
 }
 
 #content {
-    min-height: calc(100vh - 50px); /* 50px to wysokość stopki */
+    min-height: calc(100vh - 50px);
 }
 
 /* Content */
 
 .included_page {
     flex: 1;
-    margin-top: 65px; /* Wysokość navbaru */
+    margin-top: 65px;
     margin-bottom: 50px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;

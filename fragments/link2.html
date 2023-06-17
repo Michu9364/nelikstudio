@@ -1,38 +1,96 @@
 <div class="container">
 
   <div id="top" class="containertext">
-      <h1>O mnie</h1>
       <ul>
         <li>Zainteresowania</li>
-        <li>Doświadczenie</li>
-        <li>Zwierzęta</li>
       </ul>
-      <h2>Moje zwierzęta</h2>
   </div>
+
+  <div class="aboutinfo">
+    <img id="me" src="media/home.png" alt="Me">
+    <div class="abouttext1">
+      <p>Cześć! Nazywam się Michał i mam 20 lat, zapraszam Cię do poznania mnie trochę lepiej. Jestem pasjonatem technologii i fascynuje mnie rozwój internetu oraz potencjał, jaki niesie ze sobą era sztucznej inteligencji. Od najmłodszych lat odkrywałem fascynację nowymi technologiami, a dzisiaj mam przyjemność dzielić się swoją wiedzą i doświadczeniem z innymi.</p>
+      <p>Urodziłem się 25.12.2002 w Świdnicy na Dolnym Ślasku, to tam ukończyłem Technikum nr.4 jako Technik-Informatyk. Aktualnie studiuję Media Desing i Marketing Wizerunkowy na Uniwersytecie Dolnośląskim DSW.</p>
+    </div>
+  </div>
+
+  <div class="aboutinfo">
+    <div class="abouttext2">
+      <p>Jestem wielkim pasjonatem tworzenia treści wideo i grafiki. Moja przygoda z YouTube rozpoczęła się w 2013 roku, kiedy zdecydowałem się opublikować swój pierwszy film na kanale "Nelik Studio". Od tamtej pory kontynuuję rozwijanie tego kanału przerabiając muzykę.</p>
+      <p></p>
+    </div>
+  </div>
+
+  <h2>Moje ulubione gry strategiczne</h2><br>
   
+  <div class="games">
+    <div class="gamethumbnail">
+      <img src="media/game1.jpg" alt="The Settlers 4">
+      <h3>The Settlers 4</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game2.jpg" alt="The Settlers 7">
+      <h3>The Settlers 7</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game3.jpg" alt="Europa Universalis 4">
+      <h3>Europa Universalis 4</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game4.jpg" alt="Hearts Of Iron 4">
+      <h3>Hearts Of Iron 4</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game5.jpg" alt="Civilization 6">
+      <h3>Civilization 6</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game6.jpg" alt="Anno 1800">
+      <h3>Anno 1800</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game7.jpg" alt="Cossacks 3">
+      <h3>Cossacks 3</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game8.jpg" alt="Medieval 2 Total War">
+      <h3>Medieval 2 Total War</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game9.jpg" alt="Age Of Empires 3">
+      <h3>Age Of Empires 3</h3>
+    </div>
+    <div class="gamethumbnail">
+      <img src="media/game10.jpg" alt="Stronghold Crusader 2">
+      <h3>Stronghold Crusader 2</h3>
+    </div>
+  </div>
+
+  <h2>Moje zwierzęta</h2><br>
+
   <div class="slideshow-container">
   
     <div class="mySlides fade">
       <div class="numbertext">1 / 4</div>
-      <img src="media/1.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+      <img src="media/parrot1.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
       <div class="text">Filip</div>
     </div>
     
     <div class="mySlides fade">
       <div class="numbertext">2 / 4</div>
-      <img src="media/2.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+      <img src="media/parrot2.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
       <div class="text">Gucio</div>
     </div>
     
     <div class="mySlides fade">
       <div class="numbertext">3 / 4</div>
-      <img src="media/3.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+      <img src="media/parrot3.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
       <div class="text">Wiki</div>
     </div>
     
     <div class="mySlides fade">
         <div class="numbertext">4 / 4</div>
-        <img src="media/4.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+        <img src="media/parrot4.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
         <div class="text">Zuzia</div>
       </div>
     
@@ -46,10 +104,93 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Verdana, sans-serif; 
-  margin:0;
+.aboutinfo {
+  display: flex;
+  flex: row;
+  margin: 0 120px 0;
 }
+
+.aboutinfo p {
+  font-size: 16px;
+}
+
+.aboutinfo img {
+  margin: 0 50px 0;
+}
+
+.abouttext1, .abouttext2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+
+.abouttext1 {
+  height: 200px;
+  align-content: center;
+}
+
+.abouttext2 {
+  margin-top: 10px;
+}
+
+#me {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Ulubione gry */
+
+.games {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+
+.gamethumbnail {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  flex-basis: calc(25% - 20px);
+  max-width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gamethumbnail img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.gamethumbnail h3 {
+  margin-top: 10px;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.gamethumbnail:hover {
+  transform: scale(1.05);
+}
+
+.gamethumbnail:hover h3 {
+  opacity: 1;
+}
+
+/* Przewijanie zdjęć */
 
 .mySlides {
   display: none;
@@ -105,6 +246,8 @@ img {
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20% 0% 30% 0%;
   top: 0;
 }
 
@@ -117,11 +260,10 @@ img {
   animation-duration: 1.5s;
 }
 
+/* Ciemny motyw */
+
 .dark-mode .numbertext, .dark-mode .text {
   color: orange;
-}
-
-.dark-mode .text {
   background-color: rgb(14,10,24,0.8);
 }
 
@@ -132,6 +274,13 @@ img {
 .dark-mode .prev:hover, .dark-mode .next:hover {
   background-color: orange;
 }
+
+.dark-mode .gamethumbnail h3 {
+  color: orange;
+  background-color: rgb(14,10,24,0.8);
+}
+
+/* Media */
 
 @keyframes fade {
   from {opacity: 0.5} 
