@@ -1,11 +1,5 @@
 <div class="container">
 
-  <div id="top" class="containertext">
-      <ul>
-        <li>Zainteresowania</li>
-      </ul>
-  </div>
-
   <div class="aboutinfo">
     <img id="me" src="media/home.png" alt="Me">
     <div class="abouttext1">
@@ -212,12 +206,12 @@ img {
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 6px 6px 0;
   user-select: none;
+  background-color: rgb(242, 242, 242, 0.4);
 }
 
 .next {
@@ -226,7 +220,8 @@ img {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.4);
+  color: #f2f2f2;
 }
 
 .text {
@@ -263,16 +258,18 @@ img {
 /* Ciemny motyw */
 
 .dark-mode .numbertext, .dark-mode .text {
-  color: orange;
+  color: rgb(255,165,0,0.6);
   background-color: rgb(14,10,24,0.8);
 }
 
 .dark-mode .next, .dark-mode .prev {
-  color: #0e0a18;
+  color: orange;
+  background-color: rgb(14,10,24,0.6);
 }
 
 .dark-mode .prev:hover, .dark-mode .next:hover {
-  background-color: orange;
+  background-color: rgb(255, 165, 0, 0.4);
+  color: #0e0a18;
 }
 
 .dark-mode .gamethumbnail h3 {

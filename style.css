@@ -116,7 +116,7 @@ body.dark-mode .bodytext {
 
 /* Guzik teleportacji na górę strony */
 
-#back-to-top {
+#BackToTop {
     position: fixed;
     bottom: 60px;
     right: 40px;
@@ -138,17 +138,17 @@ body.dark-mode .bodytext {
     transition: 0.3s;
 }
 
-.dark-mode #back-to-top {
+.dark-mode #BackToTop {
     background-color: orange;
     color: #0e0a18;
 }
 
-#back-to-top.show {
+#BackToTop.show {
     opacity: 1;
     visibility: visible;
 }
 
-#back-to-top:hover {
+#BackToTop:hover {
     opacity: 0.7;
 }
 
@@ -379,10 +379,6 @@ label:active:after {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.containertext {
-    text-align: center;
 }
 
 .bodytext {

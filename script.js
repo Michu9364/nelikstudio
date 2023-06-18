@@ -36,9 +36,9 @@ window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        document.getElementById("back-to-top").classList.add("show");
+        document.getElementById("BackToTop").classList.add("show");
     } else {
-        document.getElementById("back-to-top").classList.remove("show");
+        document.getElementById("BackToTop").classList.remove("show");
     }
 }
 
