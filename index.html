@@ -14,7 +14,7 @@
     <title>Nelik Studio</title>
 </head>
 <body onload="include({ val: '2' })">
-  <header style="position: relative;">
+  <div style="position: relative;">
     <div id="mainnavbar" class="navbar headerlarge">
 
       <!-- Ikona menu na małych ekranach -->
@@ -27,12 +27,12 @@
       
       <!-- Nawigacja na dużych ekranach -->
 
-      <button onclick="window.location.href='index.html/../..';" class="navbaritem navbutton hover">Nelik Studio</button>
+      <button onclick="window.location.href='index.html/../..';" class="navbaritem navbutton hover"><a>Nelik Studio</a></button>
       <div id="navbig">
-        <button onclick="include({ val: '1' })" class="navbaritem navbutton hidesmall hover">Home</button>
-        <button onclick="include({ val: '2' })" class="navbaritem navbutton hidesmall hover">About</button>
-        <button onclick="include({ val: '3' })" class="navbaritem navbutton hidesmall hover">Portfolio</button>
-        <button onclick="include({ val: '4' })" class="navbaritem navbutton hidesmall hover">Contact</button>
+        <button onclick="include({ val: '1' })" class="navbaritem navbutton hidesmall hover"><a>Home</a></button>
+        <button onclick="include({ val: '2' })" class="navbaritem navbutton hidesmall hover"><a>About</a></button>
+        <button onclick="include({ val: '3' })" class="navbaritem navbutton hidesmall hover"><a>Portfolio</a></button>
+        <button onclick="include({ val: '4' })" class="navbaritem navbutton hidesmall hover"><a>Contact</a></button>
         <input onclick="toggleDarkMode();darkmodenav();syncCheckboxes1()" type="checkbox" id="switch" class="navbaritem togglebutton "/><label for="switch" >Toggle</label>
         
       </div>
@@ -64,7 +64,7 @@
         <input onclick="toggleDarkMode();darkmodenav();syncCheckboxes2()" type="checkbox" id="switch2" class="navbaritem togglebutton "/><label for="switch2" >Toggle</label>
 
       </div>
-  </header>
+  </div>
 
     <!-- Ładowanie stron z plików (link.html) -->
 

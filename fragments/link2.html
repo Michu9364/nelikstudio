@@ -66,7 +66,7 @@
   <div class="animalsbox">
     <div class="animalstext">
       <h2>Moje zwierzęta</h2>
-      <p>Przechodząc do zwierząt, od małego zawsze towarzyszyły mi różne zwierzęta: rybki, psy czy nawet papugi. W przyszłości napewno chciałbym mieć pieska rasy golden retriever, husky lub owczarka niemieckiego - z tymi ostatnimi miałem najwięcej doczynienia i poprostu uwielbiam je! Natomiast aktualnie posiadam 4 papugi "nymphicus hollandicus" - nimfy: (kliknąć w strzałki na zdjęciu)</p>
+      <p>Przechodząc do zwierząt, od małego zawsze towarzyszyły mi różne zwierzęta: rybki, psy czy nawet papugi. W przyszłości napewno chciałbym mieć pieska rasy np. golden retriever, husky lub owczarka niemieckiego - z tymi ostatnimi miałem najwięcej doczynienia i poprostu je uwielbiam! Natomiast aktualnie posiadam 4 papugi "nymphicus hollandicus" - nimfy -> (kliknąć w strzałki na zdjęciu)</p>
     </div>
 
     <div class="slideshow-container">
@@ -173,7 +173,7 @@
   flex-basis: calc(25% - 20px);
   max-width: 300px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
   border-radius: 3%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -193,7 +193,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 10px;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .gamethumbnail:hover {
@@ -228,10 +228,8 @@ img {
   margin-top: -22px;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
   border-radius: 0 6px 6px 0;
   user-select: none;
-  background-color: rgb(242, 242, 242, 0.4);
 }
 
 .next {
@@ -242,47 +240,40 @@ img {
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.4);
   color: #f2f2f2;
+  transition: 0.6s ease;
 }
 
 .text {
-  color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
-  background-color: rgba(0,0,0,0.6);
-  transition: 0.4s;
 }
 
 .numbertext {
-  color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20% 0% 30% 0%;
   top: 0;
 }
 
-.active {
-  background-color: #717171;
+.prev, .next, .text, .numbertext {
+  color: #0e0a18;
+  background-color: rgb(242, 242, 242, 0.4);
+  transition: background-color 1.5s ease, color 2s ease;
 }
 
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
 }
 
 /* Ciemny motyw */
 
-.dark-mode .numbertext, .dark-mode .text {
-  color: rgb(255,165,0,0.6);
-  background-color: rgb(14,10,24,0.8);
-}
-
-.dark-mode .next, .dark-mode .prev {
+.dark-mode .next, .dark-mode .prev, .dark-mode .numbertext, .dark-mode .text {
   color: orange;
   background-color: rgb(14,10,24,0.6);
 }
