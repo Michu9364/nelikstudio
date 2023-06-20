@@ -3,10 +3,10 @@
   <h1>O mnie</h1>
 
   <div class="aboutinfo">
-    <img id="me" src="media/home.png" alt="Me">
+    <img id="me" src="media/about.png" alt="Chessboard">
     <div class="abouttext1">
-      <p>Cześć! Nazywam się Michał i mam 20 lat, zapraszam Cię do poznania mnie trochę lepiej. Jestem pasjonatem technologii i fascynuje mnie rozwój internetu oraz potencjał, jaki niesie ze sobą era sztucznej inteligencji. Od najmłodszych lat odkrywałem fascynację nowymi technologiami, a dzisiaj mam przyjemność dzielić się swoją wiedzą i doświadczeniem z innymi.</p>
-      <p>Urodziłem się 25.12.2002 w Świdnicy na Dolnym Śląsku, to tam ukończyłem Technikum nr.4 jako Technik-Informatyk. Aktualnie studiuję Media Desing i Marketing Wizerunkowy na Uniwersytecie Dolnośląskim DSW.</p>
+      <p>Cześć! Nazywam się Michał i mam 20 lat, zapraszam Cię do poznania mnie trochę lepiej. Jestem pasjonatem technologii i fascynuje mnie rozwój internetu oraz potencjał, jaki niesie ze sobą era sztucznej inteligencji. Od najmłodszych lat odkrywałem fascynację nowymi technologiami, a dzisiaj mam przyjemność dzielić się swoją wiedzą i doświadczeniem z innymi. Urodziłem się 25.12.2002 w Świdnicy na Dolnym Śląsku, to tam ukończyłem Technikum nr.4 jako Technik-Informatyk. Aktualnie studiuję Media Desing i Marketing Wizerunkowy na Uniwersytecie Dolnośląskim DSW.</p>
+      <p><-- Zdjęcie zrobione przez sztuczną inteligencję - szachy królewska matka gier strategicznych (a w dodatku sam czasem grywam w szachy)</p>
     </div>
   </div>
 
@@ -66,32 +66,32 @@
   <div class="animalsbox">
     <div class="animalstext">
       <h2>Moje zwierzęta</h2>
-      <p>Przechodząc do zwierząt, od małego zawsze towarzyszyły mi różne zwierzęta: rybki, psy czy nawet papugi. W przyszłości napewno chciałbym mieć pieska rasy np. golden retriever, husky lub owczarka niemieckiego - z tymi ostatnimi miałem najwięcej doczynienia i poprostu je uwielbiam! Natomiast aktualnie posiadam 4 papugi "nymphicus hollandicus" - nimfy -> (kliknąć w strzałki na zdjęciu)</p>
+      <p>Przechodząc do zwierząt, od małego zawsze towarzyszyły mi różne zwierzęta: rybki, psy czy nawet papugi. W przyszłości napewno chciałbym mieć pieska rasy np. golden retriever, husky lub owczarek niemiecki - z tymi ostatnimi miałem najwięcej doczynienia i poprostu je uwielbiam! Natomiast aktualnie posiadam 4 papugi "nymphicus hollandicus" - nimfy -> (kliknąć w strzałki na zdjęciu)</p>
     </div>
 
     <div class="slideshow-container">
     
       <div class="mySlides fade">
         <div class="numbertext">1 / 4</div>
-        <img src="media/parrot1.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+        <img src="media/parrot1.jpg" alt="Filip">
         <div class="text">Filip</div>
       </div>
       
       <div class="mySlides fade">
         <div class="numbertext">2 / 4</div>
-        <img src="media/parrot2.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+        <img src="media/parrot2.jpg" alt="Gucio">
         <div class="text">Gucio</div>
       </div>
       
       <div class="mySlides fade">
         <div class="numbertext">3 / 4</div>
-        <img src="media/parrot3.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+        <img src="media/parrot3.jpg" alt="Wiki">
         <div class="text">Wiki</div>
       </div>
       
       <div class="mySlides fade">
         <div class="numbertext">4 / 4</div>
-        <img src="media/parrot4.jpg" style="width:100%; height: 70vh; border-radius: 10px;">
+        <img src="media/parrot4.jpg" alt="Zuzia">
         <div class="text">Zuzia</div>
       </div>
       
@@ -132,6 +132,10 @@
   font-size: 16px;
 }
 
+.animalstext h2 {
+  text-align: center;
+}
+
 .animalsbox {
   display: flex;
   flex-direction: row;
@@ -140,7 +144,6 @@
 }
 
 .abouttext1 {
-  height: 200px;
   align-content: center;
 }
 
@@ -149,8 +152,8 @@
 }
 
 #me {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -212,6 +215,12 @@
 
 img {
   vertical-align: middle;
+}
+
+.mySlides img {
+  width: 100%; 
+  height: 70vh; 
+  border-radius: 10px;
 }
 
 .slideshow-container {

@@ -26,7 +26,7 @@ body {
     transition: background-color 1.5s ease;
 }
 
-.navbar, .included_page, .footer{
+.navbar, .included_page, .footer {
     transition: background-color 1.5s ease, color 2s ease;
 }
 
@@ -153,13 +153,13 @@ body.dark-mode .bodytext {
 
 /* Guzik zmiany motywu */
 
-input[type=checkbox]{
+#navbig input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
   }
   
-label {
+#navbig label {
     cursor: pointer;
     text-indent: -9999px;
     width: 50px;
@@ -171,7 +171,7 @@ label {
     top: 12px;
 }
   
-label:after {
+#navbig label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -183,17 +183,17 @@ label:after {
     transition: 0.3s;
 }
   
-input:checked + label {
+#navbig input:checked + label {
     background: orange;
 }
     
-input:checked + label:after {
+#navbig input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
     background: black;
 }
   
-label:active:after {
+#navbig label:active:after {
     width: 20px;
 }
 
@@ -421,13 +421,13 @@ label:active:after {
         font-size: 12px;
         padding: 12px 10px!important;
     }
-    label {
+    #navbig label {
         top: 8px;
     }
 }	
 
 @media (min-width:621px) and (max-width:699px){
-    label {
+    #navbig label {
         top: 10px;
     }
 }	
