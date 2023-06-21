@@ -1,26 +1,28 @@
 <div class="container">
-    <p>Contact</p>
-    <ul>
-        <li>Formularz kontaktowy</li>
-        <li>Dane kontaktowe</li>
-        <li>Profile społecznościowe</li>
-        <li>Przyciski/odnośniki</li>
-    </ul>
 
+    <h1>Moje media społecznościowe</h1>
+    <div class="socials">
+        <a href="https://www.tiktok.com/@michaelnelik" target="_blank" class="fab fa-tiktok"></a>
+        <a href="https://www.youtube.com/c/nelikstudio" target="_blank" class="fab fa-youtube"></a>
+        <a href="https://www.instagram.com/nelikadre" target="_blank" class="fab fa-instagram"></a>
+        <a href="https://twitter.com/Michael_Nelik" target="_blank" class="fab fa-twitter"></a>
+        <a href="https://www.facebook.com/NelikStudio" target="_blank" class="fab fa-facebook"></a>
+    </div>
 
+    <h1>Kontakt</h1>
     <div class="card">
         <form class="form" id="contactForm" method="post" action="/nelikstudio/fragments/send-script.php">
             <div class="form-row">
                 <label for="name">Imię (min. 3 znaki)</label>
-                <input type="text" name="name" required pattern=.{3,} id="name" data-error-text="Wypełnij to pole">
+                <input type="text" name="name" placeholder="Twoje imię" required pattern=.{3,} id="name" data-error-text="Wypełnij to pole">
             </div>
             <div class="form-row">
                 <label for="email">Email</label>
-                <input type="email" name="email" required id="email" data-error-text="Wpisz poprawny email">
+                <input type="email" name="email" placeholder="twójmail@gmail.com" required id="email" data-error-text="Wpisz poprawny email">
             </div>
             <div class="form-row">
                 <label for="message">Wiadomość</label>
-                <textarea name="message" required data-error-text="Musisz wypełnić pole" id="message"></textarea>
+                <textarea name="message" placeholder="Mam problem, ponieważ.." required data-error-text="Musisz wypełnić pole" id="message"></textarea>
             </div>
             <div class="form-row">
                 <button type="submit" class="submit-btn"><p>WYŚLIJ</p></button>
@@ -33,141 +35,55 @@
     </div>
 </div>
 
-<script>
-{
-    function removeFieldError(field) {
-        const errorText = field.nextElementSibling;
-        if (errorText !== null) {
-            if (errorText.classList.contains("form-error-text")) {
-                errorText.remove();
-            }
-        }
-    };
-
-    function createFieldError(field, text) {
-        removeFieldError(field); //przed stworzeniem usuwam by zawsze był najnowszy komunikat
-
-        const div = document.createElement("div");
-        div.classList.add("form-error-text");
-        div.innerText = text;
-        if (field.nextElementSibling === null) {
-            field.parentElement.appendChild(div);
-        } else {
-            if (!field.nextElementSibling.classList.contains("form-error-text")) {
-                field.parentElement.insertBefore(div, field.nextElementSibling);
-            }
-        }
-    };
-
-    function toggleErrorField(field, show) {
-        const errorText = field.nextElementSibling;
-        if (errorText !== null) {
-            if (errorText.classList.contains("form-error-text")) {
-                errorText.style.display = show ? "block" : "none";
-                errorText.setAttribute('aria-hidden', show);
-            }
-        }
-    };
-
-    function markFieldAsError(field, show) {
-        if (show) {
-            field.classList.add("field-error");
-        } else {
-            field.classList.remove("field-error");
-            toggleErrorField(field, false);
-        }
-    };
-
-    const form = document.querySelector("#contactForm");
-    const inputs = form.querySelectorAll("[required]");
-
-    //wyłączamy domyślną walidację
-    form.setAttribute("novalidate", true);
-
-    for (const el of inputs) {
-        el.addEventListener("input", e => markFieldAsError(e.target, !e.target.checkValidity()));
-    }
-
-    form.addEventListener("submit", e => {
-        e.preventDefault();
-
-        let formErrors = false;
-
-        //2 etap - sprawdzamy poszczególne pola gdy ktoś chce wysłać formularz
-        for (const el of inputs) {
-            removeFieldError(el);
-            el.classList.remove("field-error");
-
-            if (!el.checkValidity()) {
-                createFieldError(el, el.dataset.errorText);
-                el.classList.add("field-error");
-                formHasErrors = true;
-            }
-        }
-
-        if (!formErrors) {
-            const submit = form.querySelector("[type=submit]");
-            submit.disabled = true;
-            submit.classList.add("loading");
-
-            const formData = new FormData(form);
-            const url = form.getAttribute("action");
-            const method = form.getAttribute("method");
-
-            fetch(url, {
-                method: method.toUpperCase(),
-                body: formData
-            })
-            .then(res => res.json())
-            .then(res => {
-                if (res.errors) {
-                    const selectors = res.errors.map(el => `[name="${el}"]`);
-                    const fieldsWithErrors = form.querySelectorAll(selectors.join(","));
-                    for (const el of fieldsWithErrors) {
-                        markFieldAsError(el, true);
-                        toggleErrorField(el, true);
-                    }
-                } else {
-                    if (res.status === "ok") {
-                        const div = document.createElement("div");
-                        div.classList.add("form-send-success");
-                        div.innerText = "Wysłanie wiadomości się nie powiodło";
-
-                        form.parentElement.insertBefore(div, form);
-                        div.innerHTML = `
-                            <strong>Wiadomość została wysłana</strong>
-                            <span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>
-                        `;
-                        form.remove();
-                    }
-                    if (res.status === "error") {
-                        //jeżeli istnieje komunikat o błędzie wysyłki
-                        //np. generowany przy poprzednim wysyłaniu formularza
-                        //usuwamy go, by nie duplikować tych komunikatów
-                        const statusError = document.querySelector(".form-send-error");
-                        if (statusError) {
-                            statusError.remove();
-                        }
-
-                        const div = document.createElement("div");
-                        div.classList.add("form-send-error");
-                        div.innerText = "Wysłanie wiadomości się nie powiodło";
-                        submit.parentElement.appendChild(div);
-                    }
-                }
-            }).finally(() => {
-                submit.disabled = false;
-                submit.classList.remove("loading");
-            });
-        }
-    });
-}
-</script>
-
 <style>
 * {
     box-sizing: border-box;
 }
+
+.socials .fab {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0px 4px black;
+}
+
+.dark-mode .socials .fab {
+    box-shadow: none;
+}
+
+.fab:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.fa-facebook {
+    background: #3B5998;
+}
+
+.fa-tiktok {
+    background: #3B5998;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    padding: 20px!important;
+}
+
+.fa-instagram {
+    background: #125688;
+}
+
+/* Ostylowanie formularza */
 
 body {
     margin: 0;
@@ -260,13 +176,25 @@ body {
     transition: color 3s ease;
 }
 
-.form input, .form textarea, .form .submit-btn {
+.form input, .form textarea {
     transition: border 3s ease;
 }
 
-.dark-mode .form input, .dark-mode .form textarea, .dark-mode .form .submit-btn {
-    color: orange;
-    border: 2px solid orange;
+.form .submit-btn {
+    transition: border 3s ease, transform 0.3s;
+}
+
+::placeholder {
+    color: rgb(136, 89, 41);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgb(136, 89, 41);
+}
+
+::-ms-input-placeholder {
+    color: rgb(136, 89, 41);
 }
 
 .form .submit-btn p {
@@ -311,6 +239,143 @@ body {
     margin-bottom: 0.3em;
 }
 
+/* Ciemny motyw */
+
+.dark-mode .form input, .dark-mode .form textarea, .dark-mode .form .submit-btn {
+    color: orange;
+    border: 2px solid orange;
+}
+
 </style>
+
+<script>
+
+/* Działanie formularzu */
+
+{
+    function removeFieldError(field) {
+        const errorText = field.nextElementSibling;
+        if (errorText !== null) {
+            if (errorText.classList.contains("form-error-text")) {
+                errorText.remove();
+            }
+        }
+    };
+
+    function createFieldError(field, text) {
+        removeFieldError(field);
+
+        const div = document.createElement("div");
+        div.classList.add("form-error-text");
+        div.innerText = text;
+        if (field.nextElementSibling === null) {
+            field.parentElement.appendChild(div);
+        } else {
+            if (!field.nextElementSibling.classList.contains("form-error-text")) {
+                field.parentElement.insertBefore(div, field.nextElementSibling);
+            }
+        }
+    };
+
+    function toggleErrorField(field, show) {
+        const errorText = field.nextElementSibling;
+        if (errorText !== null) {
+            if (errorText.classList.contains("form-error-text")) {
+                errorText.style.display = show ? "block" : "none";
+                errorText.setAttribute('aria-hidden', show);
+            }
+        }
+    };
+
+    function markFieldAsError(field, show) {
+        if (show) {
+            field.classList.add("field-error");
+        } else {
+            field.classList.remove("field-error");
+            toggleErrorField(field, false);
+        }
+    };
+
+    const form = document.querySelector("#contactForm");
+    const inputs = form.querySelectorAll("[required]");
+
+    form.setAttribute("novalidate", true);
+
+    for (const el of inputs) {
+        el.addEventListener("input", e => markFieldAsError(e.target, !e.target.checkValidity()));
+    }
+
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        let formErrors = false;
+
+        for (const el of inputs) {
+            removeFieldError(el);
+            el.classList.remove("field-error");
+
+            if (!el.checkValidity()) {
+                createFieldError(el, el.dataset.errorText);
+                el.classList.add("field-error");
+                formHasErrors = true;
+            }
+        }
+
+        if (!formErrors) {
+            const submit = form.querySelector("[type=submit]");
+            submit.disabled = true;
+            submit.classList.add("loading");
+
+            const formData = new FormData(form);
+            const url = form.getAttribute("action");
+            const method = form.getAttribute("method");
+
+            fetch(url, {
+                method: method.toUpperCase(),
+                body: formData
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.errors) {
+                    const selectors = res.errors.map(el => `[name="${el}"]`);
+                    const fieldsWithErrors = form.querySelectorAll(selectors.join(","));
+                    for (const el of fieldsWithErrors) {
+                        markFieldAsError(el, true);
+                        toggleErrorField(el, true);
+                    }
+                } else {
+                    if (res.status === "ok") {
+                        const div = document.createElement("div");
+                        div.classList.add("form-send-success");
+                        div.innerText = "Wysłanie wiadomości się nie powiodło";
+
+                        form.parentElement.insertBefore(div, form);
+                        div.innerHTML = `
+                            <strong>Wiadomość została wysłana</strong>
+                            <span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>
+                        `;
+                        form.remove();
+                    }
+                    if (res.status === "error") {
+                        const statusError = document.querySelector(".form-send-error");
+                        if (statusError) {
+                            statusError.remove();
+                        }
+
+                        const div = document.createElement("div");
+                        div.classList.add("form-send-error");
+                        div.innerText = "Wysłanie wiadomości się nie powiodło";
+                        submit.parentElement.appendChild(div);
+                    }
+                }
+            }).finally(() => {
+                submit.disabled = false;
+                submit.classList.remove("loading");
+            });
+        }
+    });
+}
+</script>
+
 </body>
 </html>
