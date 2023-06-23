@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </body>
             </html>";
 
-        if (mail($mailToSend, "Wiadomość ze strony - " . date("d-m-Y"), $message, $headers)) {
+        if (mail($mailToSend, "Wiadomość ze strony NelikStudio.me - " . date("d-m-Y"), $message, $headers)) {
             $return["status"] = "ok";
         } else {
             $return["status"] = "error";
