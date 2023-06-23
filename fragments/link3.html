@@ -1,14 +1,15 @@
 <div class="container">
-    <p>Portfloio</p>
-    <ul>
-        <li>Doświadczenie</li>
-        <li>Projekty/prace</li>
-        <li>Youtube filmy</li>
-    </ul>
 
-    <h1>YouTube</h1>
+    <div class="portfoliocontainer">
 
-    <h1>Moje 3 ostatnie filmy</h1>
+        <h1>YouTube</h1>
+      
+        <div class="portfoliotext">
+            <p>Moja przygoda z YouTube rozpoczęła się w 2013 roku, kiedy zdecydowałem się opublikować swój pierwszy film na kanale "Nelik Studio". Od tamtej pory kontynuuję rozwijanie tego kanału tworząc/przerabiając muzykę. Aktualnie teści zamieszczam na YouTube, w postaci filmów oraz shortsów, oraz na platformie TikTok. Warto tutaj zaznaczyć, że mój kanał jest mały, dlatego jeszcze na nim nie zarabiam, a filmy tworzę z pasji i dobrej zabawy.</p>
+        </div>
+    </div>
+
+    <h1>3 ostatnie filmy</h1>
     <div class="videocontainer">
         <div class="video">
             <iframe src="https://www.youtube.com/embed/GIZbOJMq8zQ" frameborder="0" allowfullscreen></iframe>
@@ -24,31 +25,107 @@
             <iframe src="https://www.youtube.com/embed/7UTKUHfaMJY" frameborder="0" allowfullscreen></iframe>
             <p>BIAŁAS - NEWCOMER</p>
         </div>
+    </div><br><br>
+
+    <h1>3 najpopularniejsze filmy</h1>
+    <div class="videocontainer">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/F4YPbTJ2wWM" frameborder="0" allowfullscreen></iframe>
+            <p>STACHU JONES - TSUNAMI</p>
+        </div>
+          
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/vDpQq7xvAjw" frameborder="0" allowfullscreen></iframe>
+            <p>XS Project - BOCHKA, BASS, KKOLBASER</p>
+        </div>
+          
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/s_mN3wrcPw0" frameborder="0" allowfullscreen></iframe>
+            <p>TUJAMO - BOOTY BOUNCE</p>
+        </div>
+    </div><br><br>
+
+    <h1>TikTok</h1>
+    
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@michaelnelik" data-unique-id="michaelnelik" data-embed-type="creator">
+        <section>
+            <a target="_blank" href="https://www.tiktok.com/@michaelnelik?refer=creator_embed">@michaelnelik</a>
+        </section>
+    </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <h1>3 ostatnie filmy w formacie TikTok</h1>
+    <div class="videocontainer">
+        <div class="videotiktok">
+            <iframe src="https://www.tiktok.com/embed/v2/7237769354987785499" frameborder="0" allowfullscreen></iframe>
+        </div>
+          
+        <div class="videotiktok">
+            <iframe src="https://www.tiktok.com/embed/v2/7234466348351458587" frameborder="0" allowfullscreen></iframe>
+        </div>
+          
+        <div class="videotiktok">
+            <iframe src="https://www.tiktok.com/embed/v2/7230044077562088730" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
 <style>
 
+.portfoliotext, .portfoliocontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+
+.portfoliocontainer {
+    min-height: 800px;
+    margin: 0px 120px 0px;
+    font-size: 18px;
+}
+
+.portfoliocontainer h1 {
+    text-align: center;
+}
+
+.container h1 {
+    margin: 40px;
+}
+
 .videocontainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-height: 400px;
+    min-height: 250px;
 }
 
 .video {
-    width: 320px;
-    height: 180px;
+    width: 480px;
+    height: 270px;
+    margin: 10px;
+}
+
+.videotiktok {
+    height: 760px;
+    max-width: 605px;
+    min-width: 325px;
     margin: 10px;
 }
     
-.video iframe {
+.video iframe, .videotiktok iframe {
     width: 100%;
     height: 100%;
 }
 
 .video p {
     text-align: center;
+}
+
+.tiktok-embed {
+    margin: 80px 0px 80px;
+    max-width: 780px;
+    min-width: 288px;
+    transform: scale(1.3);
 }
 
 </style>
