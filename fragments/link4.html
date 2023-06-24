@@ -40,6 +40,13 @@
     box-sizing: border-box;
 }
 
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .socials .fab {
     padding: 20px;
     font-size: 30px;
@@ -248,11 +255,59 @@ body {
     margin-bottom: 0.3em;
 }
 
+.included_page {
+    overflow: hidden;
+}
+
 /* Ciemny motyw */
 
 .dark-mode .form input, .dark-mode .form textarea, .dark-mode .form .submit-btn {
     color: orange;
     border: 2px solid orange;
+}
+
+/* Responsywność */
+
+/* mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5vh;    
+    }
+    .card {
+        padding: 10px;
+    }
+
+    .form-row {
+        margin-bottom: 10px;
+    }
+
+    label, input {
+        font-size: 1.8vh!important;
+    }
+
+    .form textarea {
+        height: 5rem;
+    }
+}
+
+/* mobile +1 */
+@media (min-width: 481px) and (max-width: 620px){
+    .card {
+        padding: 20px;
+    }
+
+    .form-row {
+        margin-bottom: 10px;
+    }
+
+    .form textarea {
+        height: 7rem;
+    }
+}	
+
+/* Max */
+@media (min-width: 621px) and (max-width: 700px){
+
 }
 
 </style>

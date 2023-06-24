@@ -27,7 +27,7 @@ body {
 }
 
 .navbar, .included_page, .footer {
-    transition: background-color 1.5s ease, color 2s ease;
+    transition: background-color 1.5s ease, color 2s ease, box-shadow 0.8s ease;
 }
 
 .hover {
@@ -64,17 +64,9 @@ body {
     color:orange;
 }
 
-.dark-mode .footer, .dark-mode #navmobile{
-    background-color: #0e0a18;
-}
-
-.dark-mode .navbar{
+.dark-mode .navbar, .dark-mode #navmobile, .dark-mode .footer{
     box-shadow: none;
     background-color: #0e0a18;
-}
-
-.dark-mode .footer {
-    box-shadow: none;  
 }
 
 .darkmodenav.change .bar1, .darkmodenav.change .bar3 {
@@ -153,13 +145,13 @@ body.dark-mode .bodytext {
 
 /* Guzik zmiany motywu */
 
-#navbig input[type=checkbox]{
+#navbig input[type=checkbox], #navmobile input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
   }
   
-#navbig label {
+#navbig label, #navmobile label {
     cursor: pointer;
     text-indent: -9999px;
     width: 50px;
@@ -171,7 +163,7 @@ body.dark-mode .bodytext {
     top: 12px;
 }
   
-#navbig label:after {
+#navbig label:after, #navmobile label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -183,17 +175,17 @@ body.dark-mode .bodytext {
     transition: 0.3s;
 }
   
-#navbig input:checked + label {
+#navbig input:checked + label, #navmobile input:checked + label {
     background: orange;
 }
     
-#navbig input:checked + label:after {
+#navbig input:checked + label:after, #navmobile input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
     background: black;
 }
   
-#navbig label:active:after {
+#navbig label:active:after, #navmobile label:active:after {
     width: 20px;
 }
 
@@ -208,9 +200,11 @@ body.dark-mode .bodytext {
     position: fixed;
     overflow: hidden;
     margin-top: 64px;
-    height: 310px;
+    height: 320px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     z-index: 999;
+    background-color: #f2f2f2;
+    transition: background-color 1.5s ease, box-shadow 0.8s ease;
 }
 
 #navmobile button{
@@ -364,7 +358,7 @@ body.dark-mode .bodytext {
 
 .included_page {
     flex: 1;
-    margin-top: 65px;
+    margin-top: 51px;
     margin-bottom: 50px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -418,17 +412,13 @@ body.dark-mode .bodytext {
 
 @media (min-width:481px) and (max-width:620px){
     button {
-        font-size: 12px;
-        padding: 12px 10px!important;
+        padding: 12px 8px!important;
     }
-    #navbig label {
-        top: 8px;
-    }
-}	
+}		
 
-@media (min-width:621px) and (max-width:699px){
-    #navbig label {
-        top: 10px;
+@media (min-width:621px){
+    button {
+        font-size: 18px!important;
     }
 }	
 
@@ -436,6 +426,9 @@ body.dark-mode .bodytext {
     .hover:hover{
         transform: scale(1.12);
         color:#1c121a;
+    }
+    button {
+        font-size: 16px;
     }
 }
 
@@ -451,13 +444,6 @@ body.dark-mode .bodytext {
     }
 }
 
-@media (min-width:700px){
-    button {
-        font-size: 18px;
-    }
-    
-}
-
 @media (max-width:480px){
     .hidesmall {
         display:none!important;
@@ -468,8 +454,8 @@ body.dark-mode .bodytext {
     .navbutton {
         width:100%;
     }
-    .footertext {
-        font-size: 3vw;
+    .footer p{
+        font-size: 3vw!important;
     }
 }
 
