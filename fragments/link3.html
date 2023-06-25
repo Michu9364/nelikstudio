@@ -54,7 +54,7 @@
     </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
 
     <h1>3 ostatnie filmy w formacie TikTok</h1>
-    <div class="videocontainer">
+    <div class="videocontainertiktok">
         <div class="videotiktok">
             <iframe src="https://www.tiktok.com/embed/v2/7237769354987785499" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -93,10 +93,10 @@
 }
 
 .container h1 {
-    margin: 40px;
+    margin: 4vw;
 }
 
-.videocontainer {
+.videocontainer, .videocontainertiktok {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -104,8 +104,9 @@
 }
 
 .video {
-    width: 480px;
-    height: 270px;
+    width: 30vw;
+    height: 17vw;
+    aspect-ratio: 16/9;
     margin: 10px;
 }
 
@@ -134,43 +135,33 @@
 
 /* Responsywność */
 
-@media (max-width: 480px) and (max-width: 700px){
-    .portfoliocontainer {
-        font-size: 1.7vh;
-        justify-content: initial;
-        min-height: initial !important;
-    }
-    .portfoliocontainer h1, #tiktokh1 {
-        margin: 40px 40px 0;
-    }
-    .container h1 {
-        text-align: center;
-        font-size: 3vh;
-    }
-    .videocontainer {
-        flex-direction: column;
-        justify-content: center;
-    }
+@media (max-width: 620px) {
     .video {
         width: 68vw;
         height: 22vh;
         margin: 4vh;
     }
+    .videocontainer {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1050px) {
+    .videocontainertiktok {
+        flex-direction: column;
+        justify-content: center;
+    }
     .tiktok-embed {
         margin: 0;
         max-width: 780px;
         min-width: 288px;
         transform: scale(0.8);
     }
-    .container h1 {
-        margin: 4vh;
+    .videocontainertiktok {
+        flex-direction: column;
+        justify-content: center;
     }
-    .video p {
-        font-size: 1.9vh;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 620px){
     .portfoliocontainer {
         font-size: 1.7vh;
         justify-content: initial;
@@ -182,57 +173,6 @@
     .container h1 {
         text-align: center;
         font-size: 3vh;
-    }
-    .videocontainer {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .video {
-        width: 68vw;
-        height: 28vh;
-        margin: 4vh;
-    }
-    .tiktok-embed {
-        margin: 0;
-        max-width: 780px;
-        min-width: 288px;
-        transform: scale(0.8);
-    }
-    .container h1 {
-        margin: 4vh;
-    }
-    .video p {
-        font-size: 1.9vh;
-    }
-}
-
-@media (min-width: 621px) and (max-width: 700px){
-    .portfoliocontainer {
-        font-size: 1.7vh;
-        justify-content: initial;
-        min-height: initial !important;
-    }
-    .portfoliocontainer h1, #tiktokh1 {
-        margin: 40px 40px 0;
-    }
-    .container h1 {
-        text-align: center;
-        font-size: 3vh;
-    }
-    .videocontainer {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .video {
-        width: 68vw;
-        height: 28vh;
-        margin: 4vh;
-    }
-    .tiktok-embed {
-        margin: 0;
-        max-width: 780px;
-        min-width: 288px;
-        transform: scale(0.8);
     }
     .container h1 {
         margin: 4vh;

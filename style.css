@@ -411,7 +411,7 @@ body.dark-mode .bodytext {
 /* Responsywność */
 
 @media (min-width:481px) and (max-width:620px){
-    button {
+    .navbar button {
         padding: 12px 8px!important;
     }
 }		
