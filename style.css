@@ -414,6 +414,9 @@ body.dark-mode .bodytext {
     .navbar button {
         padding: 12px 8px!important;
     }
+    #BackToTop {
+        right: 25px;
+    }
 }		
 
 @media (min-width:621px){
@@ -457,13 +460,16 @@ body.dark-mode .bodytext {
     .footer p{
         font-size: 3vw!important;
     }
+    #BackToTop {
+        right: 20px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .headerlarge{
         display:block;
     }
-    button {
+    .navbar button {
         font-size: 20px!important;
         padding: 16px 0px!important;
     }
